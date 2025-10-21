@@ -107,7 +107,8 @@
       "title": "User Guide",
       "headings": {
         "fastcard-user-guide": "FastCard User Guide",
-        "quick-start": "Quick start",
+        "table-of-contents": "Table of Contents",
+        "getting-started-with-fastcard": "Getting Started with FastCard",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
         "listing-all-persons-list": "Listing all persons : list",
