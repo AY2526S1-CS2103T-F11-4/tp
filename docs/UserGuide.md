@@ -250,21 +250,31 @@ Examples:
 
 ### Locating persons by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+Quickly finds contacts whose names include the words you're looking for.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
-* Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+**How it works:**
+* Type one or more words from the person's name
+* FastCard shows all contacts that match any of those words
+* Only searches contact names (not phone numbers, emails, or addresses)
 
-Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+**Search rules:**
+* Not case-sensitive - `john`, `John`, and `JOHN` all find the same contacts
+* Word order doesn't matter - `find Hans Bo` and `find Bo Hans` give the same results
+* Must match complete words - `Han` won't find `Hans` (you need the full word)
+* Matches any keyword - If you search multiple words, contacts with **any** of those words appear
+
+**Examples:**
+* Search for one name:
+    * `find John` returns `John Doe`, `john smith` (anyone with "John" in their name)
+* Search for multiple names:
+    * `find alex david` returns `Alex Yeoh`, `David Li` (anyone with "Alex" **or** "David" in their name)
+
+**When to use this:**
+* You remember part of someone's name but not their full details
+* You want to quickly pull up one person from a large contact list
+* You're looking for several people at once (by searching multiple names)
 
 ### Filtering contacts: `filter`
 
@@ -304,11 +314,6 @@ Format: `sort f/FIELD o/ORDER`
 * You can write field and order in any sequence.
 * Contacts without the sorted field appear first/last if sorted in ascending/descending order respectively (e.g., contacts without tags when sorting by tag)
 
-Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
-[Configuration.md](Configuration.md)
 Example: 
 * `sort f/name o/asc` sorts contacts by name in alphabetical order
 * `sort f/tag o/desc` sorts contacts by the first alphabetically ordered tag in descending order.
