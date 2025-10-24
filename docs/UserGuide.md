@@ -803,7 +803,7 @@ clear
 ```
 **You'll see:**
 ```
-Address book has been cleared!
+Contact book has been cleared!
 ```
 **In the contact list:**
   * All contacts disappear immediately
