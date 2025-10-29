@@ -342,6 +342,7 @@ Adds a contact with full information including name, phone, email, company, and 
 
 **What you need to know:**
   * The combination of name **AND** phone number must be unique (similar to `addbasic`)
+  * Each email address must be unique across all contacts (except for placeholder emails like `unknown@example.com`)
   * All fields except tags are required
   * Add multiple tags by repeating `t/` (e.g., `t/client t/priority`)
 
@@ -395,6 +396,7 @@ add n/Mike Kumar p/87654321 e/mike@company.com c/ABC Industries
   * `add n/John Doe p/91234567 e/john@ c/Shopee` &rarr; Incomplete email address (missing domain)
   * `add John Doe 91234567 john@email.com Shopee` &rarr; Missing prefixes (need `n/`, `p/`, `e/`, `c/`)
   * `add n/John Doe p/91234567 e/john@example.com c/Shopee t/friend, colleague` &rarr; Don't use commas between tags (repeat `t/` instead)
+  * `add n/John Doe p/91234567 e/existing@email.com c/Shopee` &rarr; Trying to add a contact with an email that already exists (you'll see "This email already exists in the contact book")
   * Including reserved prefixes inside a name
       - **Symptom:** Commands like `add n/Alice p/o Bob p/91234567` fail or parse incorrectly (e.g., `p/` is treated as the start of the phone field, so the name becomes `Alice` and phone becomes `o Bob` → error).
       - **Reason:** The parser treats any reserved prefix followed by `/` (e.g., `n/`, `p/`, `e/`, `c/`, `d/`, `t/`) as a new field, even if it appears inside a value.
@@ -424,6 +426,7 @@ Updates an existing contact's information by either their name or position numbe
   * **Multiple contacts with the same name** - FastCard will show all matches and ask you to edit by index instead
   * **Existing values are replaced** - For name, phone, email, company, and detail fields, your new input completely replaces the old information
   * **Detail field** (`d/`) - A note field with a maximum of 300 characters. Can be left empty to clear existing detail
+  * **Email uniqueness** - Each email address must be unique across all contacts (except for placeholder emails like `unknown@example.com`). You cannot change a contact's email to one that's already used by another contact
   * **Tags are flexible** - You can overwrite all tags (`t/`), add to existing tags (`t+/`), or remove specific tags (`t-/`)
 
 **When to use this:**
@@ -575,6 +578,7 @@ edit 2 t+/partner t-/client
 **Common Mistakes:**
   * `edit John Doe` &rarr; No fields provided (you must include at least one field to update)
   * `edit 0 p/91234567` &rarr; Invalid index (index starts at 1, not 0)
+  * `edit 1 e/existing@email.com` &rarr; Trying to use an email that already belongs to another contact (you'll see "This email already exists in the contact book")
   * `edit 1 t/client t+/priority` &rarr; Cannot mix `t/` with `t+/` or `t-/` (conflicting tag operations)
   * `edit 1 t-/colleague` when contact doesn't have `[colleague]` tag &rarr; FastCard will show an error listing non-existent tags
   * `edit 1 t+/` or `edit 1 t-/` &rarr; Empty tag name (you must provide at least one tag after `t+/` or `t-/`)
