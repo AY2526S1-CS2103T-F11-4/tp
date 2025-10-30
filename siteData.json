@@ -55,7 +55,7 @@
         "sort-feature": "Sort Feature",
         "filter-feature": "Filter Feature",
         "delete-feature": "Delete Feature",
-        "repeat-command-feature": "Repeat Command Feature",
+        "command-recall-feature": "Command Recall Feature",
         "add-contact-with-basic-information": "Add Contact with Basic Information",
         "add-contact-with-full-information": "Add Contact with Full Information",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, Logging, Testing, Configuration, Dev-Ops",
