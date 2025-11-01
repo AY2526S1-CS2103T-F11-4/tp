@@ -746,13 +746,6 @@ sort f/name o/desc
 
 &rarr; Orders everyone Z&rarr;A by name
 
-<box type="tip" seamless>
-
-   Pro Tip:
-  * **Check tag organization** - Use `sort f/tag o/asc` to see how well your tagging system groups contacts
-
-</box>
-
 **Common mistakes:**
   * `sort f/name` &rarr; Missing order (must provide both field **AND** order)
   * `sort o/asc` &rarr; Missing field (same as above)
