@@ -195,6 +195,7 @@ public class MainWindow extends UiPart<Stage> {
         detailsPane.setVisible(!isVisible);
         detailsPane.setManaged(false);
 
+        // AI Usage: Used Perplexity to guide on required configurations for intended side pane effect
         if (isVisible) {
             mainSplitpane.setDividerPosition(0, 1.0);
         } else {

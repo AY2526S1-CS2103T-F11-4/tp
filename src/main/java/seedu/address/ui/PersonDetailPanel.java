@@ -114,6 +114,7 @@ public class PersonDetailPanel extends UiPart<Region> {
                 clipboard.setContent(content);
 
                 // Show copied notification over button
+                // AI Usage: Used Perplexity to guide on tooltip and localToScreen method usages for this visual effect
                 Tooltip tooltip = new Tooltip("Copied!");
                 tooltip.show(button, button.localToScreen(0, 0).getX(), button.localToScreen(0, 0).getY() - 30);
 
