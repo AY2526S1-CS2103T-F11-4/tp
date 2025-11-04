@@ -34,5 +34,4 @@ else ([format ok])
   endif
 endif
 
-stop
 @enduml
