@@ -792,14 +792,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **Person card**: The UI element representing a single contact in the list.
 * **Prefix**: The short marker preceding a field in a command (e.g., `n/`, `p/`, `e/`, `a/`, `/`, `t/`).
 * **Primary identifier**: The field(s) used to check contact identity (e.g., phone number) to prevent duplicates.
-* **Private contact detail**: A contact detail that is not meant to be shared with others
 * **Result display**: The UI area showing the outcome messages of executed commands.
 * **Sample data**: Default contacts provided on first launch to demonstrate core features.
 * **Status bar**: The UI footer indicating summaries such as list counts and last update time.
 * **Storage**: Persists and retrieves data (company book and user prefs) from JSON files.
 * **System**: The application under discussion in use cases (i.e., FastCard).
 * **Tag**: A short label attached to a contact for categorization (e.g., client, supplier, industry).
-* **Undo/Redo**: Feature that reverts or reapplies recent changes to the company book using stored history.
 * **UniquePersonList**: An internal list that enforces uniqueness for contacts.
 * **User preferences**: Settings such as window size and file paths (read-only view exposed as `ReadOnlyUserPref`).
 
