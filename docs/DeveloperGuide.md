@@ -292,9 +292,6 @@ Editing contacts is facilitated by `EditCommand` and `EditCommandParser`, follow
 
 7. **Model update and feedback**: Once validation passes, `Model#setPerson(personToEdit, editedPerson)` replaces the original person with the edited version. The filtered list is updated to show only the edited contact, and a `CommandResult` is returned with the success message displaying the updated contact details.
 
-The sequence diagram below shows how the edit operation works:
-<puml src="diagrams/EditSequenceDiagram.puml" width="100%" />
-
 ### Command Recall Feature
 The repeat mechanism is facilitated by `CommandHistory` Model and `LogicManager`.
 
